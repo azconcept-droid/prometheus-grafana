@@ -1,0 +1,9 @@
+route:
+  receiver: 'sendmail'
+receivers:
+- name: 'sendmail'
+  email_configs:
+  - to: supportteam@example.com
+    from: alertmanager@example.com
+    smarthost: mailcatcher:1025
+    require_tls: false
