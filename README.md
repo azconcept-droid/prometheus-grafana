@@ -9,6 +9,10 @@ Prometheus and Grafana setup with Node exporter and smtp mail alerting. Nice!
 2. Prometheus
 3. Grafana
 
+**Resources**
+- [Getting started](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/)
+- [Documentation](https://prometheus.io/docs/visualization/grafana/)
+
 ## How to run
 1. Fork or clone this repo
 ```

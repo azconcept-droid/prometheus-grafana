@@ -1,12 +1,5 @@
 version: '3.8'
 
-networks:
-  monitoring:
-    driver: bridge
-
-volumes:
-  prometheus_data: {}
-  grafana-storage: {}
 
 services:
   alertmanager:
@@ -68,4 +61,12 @@ services:
     - "1025:1025"
     networks:
       - monitoring
-  
+
+volumes:
+  prometheus_data: {}
+  grafana-storage: {}
+
+
+networks:
+  monitoring:
+    driver: bridge
