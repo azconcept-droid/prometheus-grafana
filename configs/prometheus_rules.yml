@@ -6,20 +6,20 @@ groups:
     
   - name: alert_rules
     rules:
-      # - alert: InstanceDown
-      #   expr: up == 0
-      #   for: 1m
-      #   labels:
-      #     severity: critical
-      #   annotations:
-      #     summary: "Instance {{ $labels.instance }} down"
-      #     description: "{{ $labels.instance }} of job {{ $labels.job }}"
-      
-      - alert: NodeInstanceDown
-        expr: up{instance="node-exporter:9100", job="node"} == 0
+      - alert: InstanceDown
+        expr: up == 0
         for: 1m
         labels:
           severity: critical
         annotations:
           summary: "Instance {{ $labels.instance }} down"
           description: "{{ $labels.instance }} of job {{ $labels.job }}"
+      
+      # - alert: NodeInstanceDown
+      #   expr: up{instance="node-exporter:9100", job="node"} == 0
+      #   for: 1m
+      #   labels:
+      #     severity: critical
+      #   annotations:
+      #     summary: "Instance {{ $labels.instance }} down"
+      #     description: "{{ $labels.instance }} of job {{ $labels.job }}"
