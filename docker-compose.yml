@@ -47,6 +47,9 @@ services:
     container_name: grafana
     ports:
       - 3000:3000
+    environment:
+     - GF_SERVER_ROOT_URL=http://my.grafana.server/
+     - GF_PLUGINS_PREINSTALL=grafana-clock-panel
     volumes:
       - grafana-storage:/var/lib/grafana
     networks:

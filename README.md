@@ -12,6 +12,7 @@ Prometheus and Grafana setup with Node exporter and smtp mail alerting. Nice!
 **Resources**
 - [Getting started](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/)
 - [Documentation](https://prometheus.io/docs/visualization/grafana/)
+- [build your first dashboard with grafana](https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/)
 
 ## How to run
 1. Fork or clone this repo
@@ -55,3 +56,6 @@ sudo docker ps
     ```
     <server-ip>:1080
     ```
+>
+> __Note__: if you are running locally replace ```<server-ip>``` with ```localhost```
+>
