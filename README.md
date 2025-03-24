@@ -14,6 +14,7 @@ Prometheus and Grafana setup with Node exporter and smtp mail alerting. Nice!
 - [Documentation](https://prometheus.io/docs/visualization/grafana/)
 - [build your first dashboard with grafana](https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/)
 - [Youtube - server monitoring grafana loki](https://www.youtube.com/watch?v=ddZjhv66o_o)
+- [grafana dashboards](https://grafana.com/grafana/dashboards/)
 
 ## How to run
 1. Fork or clone this repo
