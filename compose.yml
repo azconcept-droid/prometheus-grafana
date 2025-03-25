@@ -41,12 +41,14 @@ services:
       - 9090:9090
     networks:
       - monitoring
-  
+
   grafana:
     image: grafana/grafana-enterprise
     container_name: grafana
     ports:
-      - 3000:3000
+      - 3001:3000
+    depends_on:
+      - loki
     environment:
      - GF_SERVER_ROOT_URL=http://my.grafana.server/
      - GF_PLUGINS_PREINSTALL=grafana-clock-panel
@@ -62,6 +64,36 @@ services:
     ports:
     - "1080:1080"
     - "1025:1025"
+    networks:
+      - monitoring
+
+  app:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  promtail:
+    image: grafana/promtail:2.9.1
+    volumes:
+      - ./configs/promtail.yml:/etc/promtail/config.yml
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+    networks:
+      - monitoring
+
+  loki:
+    image: grafana/loki:2.9.1
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
     networks:
       - monitoring
 
