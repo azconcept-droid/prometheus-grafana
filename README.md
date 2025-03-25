@@ -10,6 +10,7 @@ Prometheus and Grafana setup with Node exporter and smtp mail alerting. Nice!
 3. Grafana
 
 **Resources**
+- [Learn LogQL](https://grafana.com/docs/loki/latest/query/)
 - [Getting started](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-prometheus/)
 - [Documentation](https://prometheus.io/docs/visualization/grafana/)
 - [build your first dashboard with grafana](https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/)
