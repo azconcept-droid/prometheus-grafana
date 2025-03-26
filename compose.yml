@@ -67,22 +67,23 @@ services:
     networks:
       - monitoring
 
-  app:
-    build: ./backend
-    ports:
-      - "3000:3000"
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
+  # app:
+  #   build: ./backend
+  #   ports:
+  #     - "3000:3000"
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
 
   promtail:
     image: grafana/promtail:2.9.1
     volumes:
-      - ./configs/promtail.yml:/etc/promtail/config.yml
+      - ./configs/promtail-pm2-config.yml:/etc/promtail/config.yml
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock
+      - /home/yalect/.pm2/logs:/var/.pm2/logs:ro
     command: -config.file=/etc/promtail/config.yml
     depends_on:
       - loki
